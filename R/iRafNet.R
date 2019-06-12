@@ -366,7 +366,7 @@ importance <- function(x,  scale=TRUE) {
       x.sorted<-X[,index]
       w.sorted<-w.sorted$x
       
-      rout<-irafnet_onetarget(x=x.sorted,y=as.double(y),importance=TRUE,mtry=round(sqrt(p-1)),ntree=1000,
+      rout<-irafnet_onetarget(x=x.sorted,y=as.double(y),importance=TRUE,mtry=mtry,ntree=1000,
                sw=as.double(w.sorted))
       
       imp[index,j]<-c(importance(rout))
